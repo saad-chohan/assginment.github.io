@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        box-sizing: border-box;
+        background-color: burlywood;
+    }
+    .h{
+        text-align: center;
+        font-size: 200px;
+    }
+    .a{
+        text-align: center;
+        padding: 10px;
+    }
+    #num2{
+        margin-top: 10px;
+        border: 4px solid black;
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #sub2{
+        margin-top: 10px;
+        border: 4px solid black;
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #mul2{
+        margin-top: 10px;
+        border: 4px solid black;
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #div2{
+        margin-top: 10px;
+        border: 4px solid black;
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #num1{
+        margin-top: 10px;
+        border: 4px solid black;
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #sub1{
+        margin-top: 10px;
+        border: 4px solid black;
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #mul1{
+        margin-top: 10px;
+        border: 4px solid black;
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #div1{
+        margin-top: 10px;
+        border: 4px solid black;
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    .btn{
+        background-color: black;
+        color: blanchedalmond;
+        width: 120px;
+        margin-top: 20px;
+        margin-left: 70px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    #aa{
+        text-align: left;
+        display: inline-block;
+        margin-left: 100px;
+    }
+    #ab{
+        text-align: right top;
+        display: inline-block;
+        margin-left: 250px;
+    }
+    #ac{
+        text-align: left;
+        display: inline-block;
+        margin-left: 100px;
+    }
+    #ad{
+        text-align: right top;
+        display: inline-block;
+        margin-left: 250px;
+    }
+    #btn1{
+        margin-left: 150px;
+    }
+    #btn3{
+        margin-left: 150px;
+    }
+.h{
+    font-size: 30px;
+    margin-left: 30px;
+}
+#result{
+    border: solid  2px;
+    height: 40px;
+    width: 200px;
+    margin-left: 100px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: crimson;
+}
+#resultsub{
+    border: solid  2px;
+    height: 40px;
+    width: 200px;
+    margin-left: 120px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: crimson;
+}
+#resultmul{
+    border: solid  2px;
+    height: 40px;
+    width: 200px;
+    margin-left: 100px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: crimson;
+}
+#resultdiv{
+    border: solid  2px;
+    height: 40px;
+    width: 200px;
+    margin-left: 130px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: crimson;
+}
+#q{
+    font-size: 100px;
+}
+    
+</style>
+<body>
+
+    <h1 class="h" id="q">Calculation</h1>
+
+    <!-- Addition -->
+    <div class="a" id="aa">
+        <h1 class="h">Addition</h1>
+    Value 1: <input type="number" id="num1" >
+    <br>
+    Value 2: <input type="number" id="num2" >
+    <br>
+    <button id="btn1" class="btn" onclick="myfunction()"> Sum</button>
+    <br>
+    <h1 id="result"> </h1>
+</div>
+
+<!-- Subtraction -->
+<div class="a" id="ab">
+    <h1 class="h">Subtraction</h1>
+    Value 1: <input type="number" id="sub1" >
+    <br>
+    Value 2: <input type="number" id="sub2" >
+    <br>
+    <button class="btn" onclick="mysubtraction()"> Subtraction</button>
+    <br>
+    <h1 id="resultsub"> </h1>
+</div>
+
+<!-- Multiplication -->
+<div class="a" id="ac">
+    <h1 class="h">Multiplication</h1>
+    
+    Value 1: <input type="number" id="mul1" >
+    <br>
+    Value 2: <input type="number" id="mul2" >
+    <br>
+    <button id="btn3" class="btn" onclick="myMultiplication()"> Multiplication</button>
+    <br>
+    <h1 id="resultmul"> </h1>
+</div>
+
+<!-- Divisions -->
+<div class="a" id="ad">
+    <h1 class="h">division</h1>
+    Value 1: <input type="number" id="div1" >
+    <br>
+    Value 2: <input type="number" id="div2" >
+    <br>
+    <button class="btn" onclick="myDivisions()"> Divisions</button>
+    <br>
+    <h1 id="resultdiv" > </h1>
+</div>
+
+    
+    <script>
+        function myfunction() {
+            let num1 = document.getElementById("num1").value
+            let num2 = document.getElementById("num2").value
+
+            let result = Number(num1) + Number(num2);
+            
+            document.getElementById("result").innerText = result
+        }
+
+        function mysubtraction() {
+            let sub1 = document.getElementById("sub1").value
+            let sub2 = document.getElementById("sub2").value
+
+            let resultsub = sub1 - sub2;
+            
+            document.getElementById("resultsub").innerText = resultsub
+        }
+
+        function myMultiplication() {
+            let sub1 = document.getElementById("mul1").value
+            let sub2 = document.getElementById("mul2").value
+
+            let resultsub = sub1 * sub2;
+            
+            document.getElementById("resultmul").innerText = resultsub
+        }
+
+        function myDivisions() {
+            let div1 = document.getElementById("div1").value
+            let div2 = document.getElementById("div2").value
+
+            let resultdiv = div1 /div2;
+            
+            document.getElementById("resultdiv").innerText  = resultdiv
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+    <!-- Currency converter's HTML starts here -->
+    <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-margin-bottom">
+        <h1 class=" w3-center">AI Assignment 2 Prepared by Saad Bin Shahid</h1>
+        
+<form class="w3-container w3-card-4" action="/action_page.php">
+  <h2 class="w3-text-blue"><b> Currency Converter</b></h2>
+  <p><b> Use This Currency Converter to Convert Dollar into Pkr || Pkr into Dollar</b></p>
+  <p>      
+  
+  <input class="w3-input w3-border"  type="number" id="pkr" placeholder=" Insert Pak Rupees" onclick="this.value = ''" oninput="calculate(this.id)"></p>
+  <p>      
+  
+  <input class="w3-input w3-border" type="number" id="dlr" placeholder=" Insert United States Dollar" onclick="this.value = ''" oninput="calculate(this.id)"></p>
+  <p>      
+  <button class="w3-btn w3-blue" type="button"onclick="convert()">Press me</button></p>
+</form>
+
+</div>
+ <!-- Currency converter'HTML ends here -->
+
+ <!-- Grad checker's HTML starts here -->
+ <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-margin-bottom ">
+    
+    
+    <form class="w3-container w3-card-4" action="/action_page.php">
+      <h2 class="w3-text-blue"><b> Check Your Grad</b></h2>
+      <p><b>Insert Your Grad and Check Result</b></p>
+      <p>      
+      <input class="w3-input w3-border" type="text" id="gr" placeholder=" Enter Your Percentage % "  onclick="this.value = ''"></p>
+      <p>      
+           
+      <button class="w3-btn w3-blue" type="button" onclick =" maaz()">Press me</button></p>
+    </form>
+    
+    
+    
+</div>
+<!-- Grad checker's HTML ends here -->
+
+<!-- Jacket checker's HTML starts here -->
+<div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-margin-bottom" >
+    
+    
+    <form class="w3-container w3-card-4" action="/action_page.php">
+      <h2 class="w3-text-blue"><b> Should I carry jacket today?</b></h2>
+      <p><b>Jacket Checker</b></p>
+      <p>      
+      <input class="w3-input w3-border" type="text"  id="temp"  placeholder=" Enter Celsius '°C'" onclick="this.value = ''"   onclick="this.value = ''"></p>
+      <p>      
+           
+      <button class="w3-btn w3-blue" type="button" onclick="check (this.id)">Press me</button></p>
+    </form>
+    
+    
+    
+</div>
+<!-- Jacket checker's HTML ends here -->
+
+</body>
+<script>
+
+    //  Currency converter'script starts here 
+
+    function convert(){
+        let pkr = document.getElementById("pkr").value
+        let dlr = document.getElementById("dlr").value
+        // document.write(pkr)
+        // document.write(dlr)
+       
+        // if(dlr){
+        //      //pkr = "";  
+        //     resultPkr = (160*dlr )
+        //     document.getElementById("pkr" ).value  = resultPkr
+            
+        // }
+        // if(pkr){
+        //     //dlr = "";  
+        //     resultDlr = (pkr/160 )
+        //     document.getElementById("dlr").value = resultDlr
+            
+        // }
+
+
+        if(dlr || pkr){
+            resultPkr = (160*dlr )
+            document.getElementById("pkr" ).value  = resulPkr
+
+        }
+        else{ 
+            resultDlr = (pkr/160 )
+           document.getElementById("dlr").value = resultDlr
+
+        }
+
+    }
+    function calculate(id){
+       
+        value = saad(id).value ;
+    if(id == "dlr"){
+             secId = "pkr";  
+            result = (value * 160 )
+        
+        }
+    else{
+            secId = "dlr";  
+            result= (value/160 )
+           
+        }
+          saad(secId).value = result
+          
+    }
+
+    function saad (id){
+        return  document.getElementById(id);
+    }
+
+    //  Currency converter'script ends here 
+
+    //  Grad checker's script starts here 
+    function maaz(id){
+        let marks = document.getElementById("gr").value
+        
+
+        if((marks >= 80) && (marks <= 100) ){
+           let resultGrad = ("Grad 'A1'  	Exceptional")
+           document.getElementById("gr").value =resultGrad
+           
+        }
+        else if((marks >= 70) && (marks <= 79) ){
+           let resultGrad = ("Grad 'A' 	Excellent")
+           document.getElementById("gr").value =resultGrad
+           
+        }
+        else if((marks >= 60) && (marks <= 69) ){
+           let resultGrad = (" Grad 'B'	Very Good")
+           document.getElementById("gr").value =resultGrad
+           
+        }
+        else if((marks >= 50) && (marks <= 59) ){
+           let resultGrad = (" Grad 'C' Good")
+           document.getElementById("gr").value =resultGrad
+           
+        }
+        else if((marks >= 40) && (marks <= 49) ){
+           let resultGrad = (" Grad 'D' Fair")
+           document.getElementById("gr").value =resultGrad
+           
+        }
+        else if((marks <= 39) && (marks >= 33) ){
+           let resultGrad = (" Grad 'E' Satisfactory")
+           document.getElementById("gr").value =resultGrad
+           
+        }
+        else if(marks < 33) {
+            resultGrad = (" Grad 'F' Fail")
+           document.getElementById("gr").value =resultGrad
+        
+    }
+    else {
+        marks > 100;
+           let resultGrad = ("Invalid Credentials")
+           document.getElementById("gr").value =resultGrad
+        }
+}
+    //  Grad checker's script Ends here 
+
+    
+    //  Jackrt checker's script Start here 
+
+    function check(id){
+        let temp = document.getElementById("temp").value
+        if(temp >= 25 ){
+           let result = ("Don't Carry Jacket!")
+           document.getElementById("temp").value = result
+           
+        }
+        else if(temp < 25 && temp > 15){
+           let result = ("Carry Your Jacket!")
+           document.getElementById("temp").value = result
+           
+        }
+        else if(temp <= 15 && temp >0){
+           let result = ("Carry Your Coat!")
+           document.getElementById("temp").value = result
+           
+        }
+        else  {
+            temp <= 0
+           let result = (" Stay  Home!")
+           document.getElementById("temp").value = result
+           
+        }
+    }
+    
+
+    //  Jacket checker's script Ends here
+    
+
+    
+</script>
+</html> 
