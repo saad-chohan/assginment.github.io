@@ -9,7 +9,7 @@
 <style>
     body{
         box-sizing: border-box;
-        background-color: burlywood;
+        background-color: rgb(214, 224, 236);
     }
     .h{
         text-align: center;
@@ -121,7 +121,7 @@
     margin-left: 100px;
     text-align: center;
     border-radius: 10px;
-    background-color: crimson;
+    background-color: whitesmoke;
 }
 #resultsub{
     border: solid  2px;
@@ -130,7 +130,7 @@
     margin-left: 120px;
     text-align: center;
     border-radius: 10px;
-    background-color: crimson;
+    background-color: whitesmoke;
 }
 #resultmul{
     border: solid  2px;
@@ -139,7 +139,7 @@
     margin-left: 100px;
     text-align: center;
     border-radius: 10px;
-    background-color: crimson;
+    background-color: whitesmoke;
 }
 #resultdiv{
     border: solid  2px;
@@ -148,10 +148,24 @@
     margin-left: 130px;
     text-align: center;
     border-radius: 10px;
-    background-color: crimson;
+    background-color:whitesmoke;
 }
 #q{
     font-size: 100px;
+}
+a:link, a:visited {
+  background-color: #141414;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  margin-left: 350px;
+}
+
+a:hover, a:active {
+  background-color: rgb(70, 253, 95);
 }
     
 </style>
@@ -164,21 +178,21 @@
     <!-- Addition -->
     <div class="a" id="aa">
         <h1 class="h">Addition</h1>
-    Value 1: <input type="number" id="num1" >
+        <b> Value 1:</b><input type="number" id="num1" >
     <br>
-    Value 2: <input type="number" id="num2" >
+    <b> Value 2:</b><input type="number" id="num2" >
     <br>
     <button id="btn1" class="btn" onclick="myfunction()"> Sum</button>
     <br>
-    <h1 id="result"> </h1>
+    <h1 id="result" > </h1>
 </div>
 
 <!-- Subtraction -->
 <div class="a" id="ab">
     <h1 class="h">Subtraction</h1>
-    Value 1: <input type="number" id="sub1" >
+    <b> Value 1:</b><input type="number" id="sub1"  >
     <br>
-    Value 2: <input type="number" id="sub2" >
+    <b> Value 2:</b> <input type="number" id="sub2" >
     <br>
     <button class="btn" onclick="mysubtraction()"> Subtraction</button>
     <br>
@@ -189,9 +203,9 @@
 <div class="a" id="ac">
     <h1 class="h">Multiplication</h1>
     
-    Value 1: <input type="number" id="mul1" >
+   <b> Value 1:</b> <input type="number" id="mul1" >
     <br>
-    Value 2: <input type="number" id="mul2" >
+    <b> Value 2:</b><input type="number" id="mul2" >
     <br>
     <button id="btn3" class="btn" onclick="myMultiplication()"> Multiplication</button>
     <br>
@@ -201,9 +215,9 @@
 <!-- Divisions -->
 <div class="a" id="ad">
     <h1 class="h">division</h1>
-    Value 1: <input type="number" id="div1" >
+    <b> Value 1:</b > <input type="number" id="div1" >
     <br>
-    Value 2: <input type="number" id="div2" >
+    <b> Value 2:</b><input type="number" id="div2" >
     <br>
     <button class="btn" onclick="myDivisions()"> Divisions</button>
     <br>
@@ -216,7 +230,7 @@
             let num1 = document.getElementById("num1").value
             let num2 = document.getElementById("num2").value
 
-            let result = Number(num1) + Number(num2);
+            let result = Number(num1) + Number(num2)+( " "+"Answer");
             
             document.getElementById("result").innerText = result
         }
@@ -225,7 +239,7 @@
             let sub1 = document.getElementById("sub1").value
             let sub2 = document.getElementById("sub2").value
 
-            let resultsub = sub1 - sub2;
+            let resultsub = sub1 - sub2+( " "+"Answer");
             
             document.getElementById("resultsub").innerText = resultsub
         }
@@ -234,7 +248,7 @@
             let sub1 = document.getElementById("mul1").value
             let sub2 = document.getElementById("mul2").value
 
-            let resultsub = sub1 * sub2;
+            let resultsub = sub1 * sub2+( " "+"Answer");
             
             document.getElementById("resultmul").innerText = resultsub
         }
@@ -244,8 +258,11 @@
             let div2 = document.getElementById("div2").value
 
             let resultdiv = div1 /div2;
+            let fix = resultdiv.toFixed(2)+( " "+"Answer")
             
-            document.getElementById("resultdiv").innerText  = resultdiv
+            
+            
+            document.getElementById("resultdiv").innerText  = fix
         }
     </script>
 </body>
